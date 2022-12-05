@@ -1,0 +1,3 @@
+Env setup
+
+wasd control

@@ -1,0 +1,308 @@
+<?xml version="1.0" ?>
+<robot name="duck" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find duck_description)/urdf/materials.xacro" />
+<!--<xacro:include filename="$(find duck_description)/urdf/duck.trans" />-->
+
+<xacro:include filename="$(find duck_description)/gazebo/duck_materials.gazebo" />
+<xacro:include filename="$(find duck_description)/gazebo/duck_physics.gazebo" />
+<xacro:include filename="$(find duck_description)/gazebo/duck_plugins.gazebo" />
+
+
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.05101704305235959 -1.0778151042224695e-05 0.17068007655051307"/>
+    <mass value="46.82272807242809"/>
+    <inertia ixx="0.626679" ixy="0.000944" ixz="-0.030178" iyy="1.899301" iyz="9.3e-05" izz="1.862284"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_frontwheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-2.9390397060513607e-09 -0.03503766439501102 -1.5735230796121158e-07"/>
+    <mass value="11.136175678001043"/>
+    <inertia ixx="0.026909" ixy="0.0" ixz="-0.0" iyy="0.048102" iyz="0.0" izz="0.026909"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.229463 -0.2296 -0.081394"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/right_frontwheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.229463 -0.2296 -0.081394"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/right_frontwheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_frontwheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-8.846289908936988e-08 0.035037615642317166 -1.4291986839831683e-07"/>
+    <mass value="11.136215821603535"/>
+    <inertia ixx="0.026909" ixy="-0.0" ixz="-0.0" iyy="0.048102" iyz="0.0" izz="0.026909"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.229463 0.2296 -0.081394"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/left_frontwheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.229463 0.2296 -0.081394"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/left_frontwheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_backwheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-3.1951071177704904e-07 -0.03503766439501091 -1.7039963265408353e-07"/>
+    <mass value="11.136175678000965"/>
+    <inertia ixx="0.026909" ixy="0.0" ixz="-0.0" iyy="0.048102" iyz="0.0" izz="0.026909"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.263691 -0.2296 -0.081925"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/right_backwheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.263691 -0.2296 -0.081925"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/right_backwheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_backwheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-4.355953145962488e-07 0.03503761564231722 -1.9212325416684273e-07"/>
+    <mass value="11.136215821603576"/>
+    <inertia ixx="0.026909" ixy="-0.0" ixz="-0.0" iyy="0.048102" iyz="0.0" izz="0.026909"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.263691 0.2296 -0.081925"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/left_backwheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.263691 0.2296 -0.081925"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/left_backwheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-8.193133987088874e-07 1.8657367368123766e-06 0.03608489423123695"/>
+    <mass value="4.8206637754823465"/>
+    <inertia ixx="0.005355" ixy="-0.0" ixz="-0.0" iyy="0.005358" iyz="0.0" izz="0.006536"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.157692 -0.0 -0.616539"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.157692 -0.0 -0.616539"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="middle_case_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.29072140518707223 -3.337339200083743e-06 0.08729639670679934"/>
+    <mass value="15.782733799040091"/>
+    <inertia ixx="0.442139" ixy="1.7e-05" ixz="-0.061942" iyy="0.728843" iyz="3e-06" izz="1.099761"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.258804 0.0 -0.19933"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/middle_case_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.258804 0.0 -0.19933"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/middle_case_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="top_case_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.31777165910855737 -7.51698507369497e-05 0.1964836833027458"/>
+    <mass value="17.19984458184514"/>
+    <inertia ixx="0.418849" ixy="-0.000187" ixz="-0.03852" iyy="0.640039" iyz="4.1e-05" izz="0.811263"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.281871 0.0 -0.308261"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/top_case_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.281871 0.0 -0.308261"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/top_case_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="monitor_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.001655376259088126 0.07749999999833582 0.0002915373902269147"/>
+    <mass value="0.33543851271956476"/>
+    <inertia ixx="0.000854" ixy="0.0" ixz="3.2e-05" iyy="0.000188" iyz="-0.0" izz="0.000678"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.30675 0.0775 -0.474076"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/monitor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.30675 0.0775 -0.474076"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/monitor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="realsense256_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.3233874079920938e-07 8.336765847105631e-10 0.010999970214392252"/>
+    <mass value="0.09367112401702242"/>
+    <inertia ixx="8.9e-05" ixy="-0.0" ixz="0.0" iyy="5e-06" iyz="0.0" izz="8.7e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.236745 -0.0 -0.467447"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/realsense256_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.236745 -0.0 -0.467447"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/realsense256_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="realsense450_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.005500294725026472 -4.3524614181041663e-07 0.00799970592549848"/>
+    <mass value="0.037001926351152764"/>
+    <inertia ixx="1.9e-05" ixy="-0.0" ixz="0.0" iyy="1e-06" iyz="-0.0" izz="1.9e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.237702 -4.3e-05 -0.507313"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/realsense450_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.237702 -4.3e-05 -0.507313"/>
+    <geometry>
+      <mesh filename="package://duck_description/meshes/realsense450_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="right_front_rota" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.229463 0.2296 0.081394"/>
+  <parent link="base_link"/>
+  <child link="right_frontwheel_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="left_front_rota" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.229463 -0.2296 0.081394"/>
+  <parent link="base_link"/>
+  <child link="left_frontwheel_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="right_back_rota" type="continuous">
+  <origin rpy="0 0 0" xyz="0.263691 0.2296 0.081925"/>
+  <parent link="base_link"/>
+  <child link="right_backwheel_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="left_back_rota" type="continuous">
+  <origin rpy="0 0 0" xyz="0.263691 -0.2296 0.081925"/>
+  <parent link="base_link"/>
+  <child link="left_backwheel_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="lidar_rota" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.157692 0.0 0.616539"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+  <axis xyz="0.0 -0.0 1.0"/>
+</joint>
+
+<joint name="middle_base_att" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.258804 0.0 0.19933"/>
+  <parent link="base_link"/>
+  <child link="middle_case_1"/>
+</joint>
+
+<joint name="top_middle_att" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.023067 0.0 0.108931"/>
+  <parent link="middle_case_1"/>
+  <child link="top_case_1"/>
+</joint>
+
+<joint name="monitor_att" type="fixed">
+  <origin rpy="0 0 0" xyz="0.588621 -0.0775 0.165815"/>
+  <parent link="top_case_1"/>
+  <child link="monitor_1"/>
+</joint>
+
+<joint name="realsense256_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.045126 0.0 0.159186"/>
+  <parent link="top_case_1"/>
+  <child link="realsense256_1"/>
+</joint>
+
+<joint name="realsense450_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.044169 4.3e-05 0.199052"/>
+  <parent link="top_case_1"/>
+  <child link="realsense450_1"/>
+</joint>
+
+</robot>
